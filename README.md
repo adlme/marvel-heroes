@@ -4,36 +4,91 @@ The app will consist of a Landing Page and a SuperHeroes Page. The Landing Page 
 
 
 ## MVP (DOM - CANVAS)
-MVP definition, deliverables.
+The MVP will consist of building the landing page and the superheroes page.
 
 
 ## Backlog
-
+Making cool animations and making a detailed superheroes page.
 
 ## Data structure
-Classes and methods definition.
+LandingPage:
+    this.parentEl
+    this.subtitle
+    this.style
+    this.generate()
+    this.render
 
+HeroesPage:
+    this.parentEl
+    this.heroes
+    this.title
+    this.generate()
+    this.render()
+    this.getMovies()
+
+NavBar:
+    this.parentEl
+    this.links
+    this.style
+    this.generate()
+    this.render()
+
+Footer:
+    this.parentEl
+    this.style
+    this.generate()
+    this.render()
+
+Card:
+    this.style
+    this.heroe
+    this.generate()
+
+Loading
+    this.parentEl
+    this.style
+    this.generate()
+    this.render
+
+Layout
+    this.root
+    this.style
+    this.generate
+    this.render
+    this.getContainer()
+
+Service
+    ServiceMarvelHeroes
 
 ## States y States Transitions
-Definition of the different states and their transition (transition functions)
 
-
+HomePage
+    click SuperHeroes button
+        SuperHeroes Page
+            click Home button
+                Home Page
+                    ...
 
 ## Task
-Task definition in order of priority
+
+    create files and folders
+    set git and github
+    add boilerplates to files
+    configure each file
+
 
 
 ## Links
 
 
 ### Trello
-[Link url](https://trello.com)
+[Link url](https://trello.com/b/YRnMSOWg/marvel-heroes)
 
 
 ### Git
 URls for the project repo and deploy
-[Link Repo](http://github.com)
-[Link Deploy](http://github.com)
+[Link Repo](https://github.com/adlme/marvel-heroes)
+[Link Deploy](https://adlme.github.io/marvel-heroes/)
 
 
 ### Slides
