@@ -11,7 +11,7 @@ Footer.prototype.generate = function(){
     this.elements = `
     <footer class="footer">
         <div id="footer-wrapper">
-         <img src="./../Divi-footer-social-buttons.png"></img>
+         <img src="./Divi-footer-social-buttons.png"></img>
         </div>
     </footer>
     `;
