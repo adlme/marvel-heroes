@@ -26,6 +26,7 @@ html {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     line-height: 147%;
+    background: #000000;
   }
 
  
@@ -44,23 +45,32 @@ html {
   
   /* ---- layout ---- */
 
-  
-  nav ul{
-      
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 8vh;
-      font-family: 'Montserrat', sans-serif;
-      background-color: rgba(0, 0, 0, 0.5)
-  
+
+  .navbar{
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 1030;
+    background-color: #000000;
   }
 
-  .navbar li{
-        list-style: none;
-        
+  nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 8vh;
+    
   }
-
+  
+  .navbar li {
+    list-style: none;
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 1);
+    font-family: 'Montserrat', sans-serif;
+    
+  }
+    
   .navbar a {
     text-transform: uppercase;
     text-decoration: none;
@@ -71,23 +81,20 @@ html {
     padding: 14px 16px;
     color: white;
     width: 100%;
+    line-height: 40px;
   }
 
-  /* .navbar a:hover {
-    background-color: #ddd;
-    color: black;
+  nav a.active {
+    border-bottom: 0.1em solid #FFFFFF;
   }
 
-  .topnav a.active {
-    background-color: #4CAF50;
-    color: white;
-  } */
 
   #site-header {
-    padding: 10px 10px;
     color: white;
     background: #111;
   }
+
+
   
   #footer-wrapper{
       vertical-align: middle;
@@ -95,19 +102,23 @@ html {
 
   #site-footer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     color: white;
-    padding: 40px 0;
     background: #111;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%; 
     text-align: center;
 
   }
+
+  #footer-wrapper img{
+    height: 5vh;
+  }
   
-  #bg-video{
-    background-color: green;
+  #LP{
+
     height: 88vh;
     display: flex;
     flex-direction: column;
@@ -116,13 +127,79 @@ html {
   }
 
   #site-main {
-
+    margin-top: 77px;
   }
+
+  h1#all-superheroes{
+    margin: 20px;
+    padding: 0;
+    color: white;
+    background: #000000;
+    -webkit-animation: glowWhite 2s ease-in-out infinite alternate;
+    -moz-animation: glowWhite 2s ease-in-out infinite alternate;
+    animation: glowWhite 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glowWhite {
+    0% {
+      text-shadow: 10px 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff
+      }
+    100% {
+      text-shadow: 0 0 20px #fff, 0 0 30px #000000, 0 0 40px #000000, 0 0 50px #000000, 0 0 60px #000000, 0 0 70px #000000, 0 0 80px #000000;
+    }
+  }
+
+  .cards-container article{
+    background-color: white;
+    
+  }
+
+  .cards-container article:hover{
+    animation: pulseCards 2s ease-in-out infinite alternate;
+  }
+
+
+@keyframes pulseCards {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
 
   #div-button {
       display: flex;
       justify-content: center;
   }
+
+  .glow{
+    -webkit-animation: glow 2s ease-in-out infinite alternate;
+    -moz-animation: glow 2s ease-in-out infinite alternate;
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+    0% {
+      text-shadow: 10px 0 10px #fff, 0 0 20px #fff, 0 0 30px #003cff, 0 0 40px #003cff, 0 0 50px #003cff, 0 0 60px #003cff, 0 0 70px #003cff;
+      }
+    100% {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  }
+
+
+
+
+  
 
   #landing-page h1{
     text-align: center;
@@ -130,22 +207,50 @@ html {
     vertical-align: middle;
     line-height: 100%;
     font-family: 'Montserrat', sans-serif;
-    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
     margin: 0;
-  }
+    }
 
    .button-landing-page {
     width: 220px;
     height: 50px;
-    border: none;
     outline: none;
     color: #fff;
-    background: #111;
-    cursor: pointer;
-    border-radius: 10px;
+    border-radius: 0.12em;
+    background: rgba(0, 0, 0, 0);
+    font-weight: bold;
+    text-transform: uppercase;
     text-align: center;
     top: 70%;
     font-family: inherit;
+    font-size: 15px;
+    animation: pulse 2s ease-in-out infinite alternate;
+    transition: all 0.7s;
+    border:0.1em solid #FFFFFF;
+
+  }
+
+  .button-landing-page:hover{
+    color:#000000;
+    background-color: #FFFFFF
+  }
+
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
 }
 
   
@@ -173,7 +278,6 @@ html {
     margin: 0 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    grid-gap: 20px;
 
   }
   
@@ -181,15 +285,31 @@ html {
     border: 1px solid #d3d3d3;
     border-radius: .25rem;
     height: 200px;
-    width: 150px;
+    width: auto;
     text-align: center;
+    margin: 10px;
   }
   .superhero-img{
     height: 100px;
     width: 120px;
-  
+
   }
   
+  .cards-container a:visited{
+    text-decoration-color: black;
+    color: black;
+  }
+
+  .cards-container a:link{
+    text-decoration-color: black;
+    color: black;
+  }
+
+  .bg-video{
+    position: fixed;
+    z-index: -1;
+    
+  }
   
   /* ---- section ---- */
   

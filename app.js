@@ -5,12 +5,15 @@ function main() {
     var layoutInstance = null;
     var navbarInstance = null;
     var footerInstance = null;
+    var anchors = null;
     var links = [{
         name: "Home",
-        url: "/"
+        url: "/",
+        active: "active"
     }, {
         name: "Superheroes",
-        url: "/superheroes"
+        url: "/superheroes",
+        active:""
     }];
     var rootElement = document.querySelector("#root");
     
@@ -19,7 +22,7 @@ function main() {
     generateFooter();
     addListenersToNavbar();
     activateRouter();
-
+    
     function generateLayout() {
         layoutInstance = new Layout(rootElement);
         layoutInstance.generate();
@@ -40,7 +43,7 @@ function main() {
     }
 
     function addListenersToNavbar() {
-        var anchors = document.querySelectorAll("nav a");
+        anchors = document.querySelectorAll("nav a");
         anchors.forEach((anchor) => {
             anchor.addEventListener('click', changePage)
         })
@@ -49,6 +52,10 @@ function main() {
     function changePage(event) {
         var url = event.target.attributes.url.value;
         routerInstance.buildDom(url, layoutInstance.main)
+        anchors.forEach(function(anchor) {
+            anchor.classList.remove('active');
+        })
+        event.target.classList.add('active');
     }
 }
 

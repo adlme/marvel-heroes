@@ -10,17 +10,18 @@ SuperheroesPage.prototype.generate = async function() {
     await this.connectToAPI()
     this.elements = `
     <header>
-        <h1 id="all-superheroes">All superheroes</h1>
+    <h1 id="all-superheroes">All superheroes</h1>
     </header>
     <section class = "cards-container">
     `;
-    this.superheroes.forEach((superheroe) => {
-        console.log(superheroe)
+    this.superheroes.forEach((superhero) => {
         this.elements += `
-        <article>
-            <h3>${superheroe.name}</h3>
-            <img class="superhero-img" src = "${superheroe.thumbnail.path}.jpg" alt = "${superheroe.name}"></img>
-        </article>
+        <a href="${superhero.urls[0].url}">
+            <article>
+            <h3>${superhero.name}</h3>
+                    <img class="superhero-img" src = "${superhero.thumbnail.path}.jpg" alt = "${superhero.name}"></img>
+                    </article>
+        </a>
         ` 
     });
     this.elements += `</section>`

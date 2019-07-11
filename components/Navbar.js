@@ -1,10 +1,11 @@
 'use strict';
 
-function Navbar(parentElement, links, style) {
+function Navbar(parentElement, links, style, active) {
     this.parentElement = parentElement;
     this.links = links;
     this.style = style;
     this.elements = null;
+    this.active = active;
 
 }
 
@@ -16,7 +17,7 @@ Navbar.prototype.generate = function(){
     this.links.forEach((link) => {
         this.elements += `
             <li>
-                <a href = "#0" url = ${link.url}>${link.name}</a>
+                <a class = "${link.active}"href = "#0" url = ${link.url}>${link.name}</a>
             </li>
         `
     });
