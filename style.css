@@ -270,6 +270,13 @@ html {
     }
   }
 
+  .loading-img-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 36vh;
+  }
+
+
   #all-superheroes {
       text-align: center;
   }
@@ -278,7 +285,6 @@ html {
     margin: 0 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-
   }
   
   .cards-container article{

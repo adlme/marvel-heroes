@@ -5,7 +5,6 @@ function Router() {
 }
 
 Router.prototype.buildDom = function(url, parentElement) {
-    console.log(url);
     switch (url) {
         case "/":
         this.generateLandingPage(parentElement)

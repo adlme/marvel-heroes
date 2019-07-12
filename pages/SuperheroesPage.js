@@ -7,6 +7,8 @@ function SuperheroesPage(parentElement) {
 }
 
 SuperheroesPage.prototype.generate = async function() {
+    this.loading = new LoadingPage(this.parentElement);
+    this.loading.generate();
     await this.connectToAPI()
     this.elements = `
     <header>
@@ -17,10 +19,10 @@ SuperheroesPage.prototype.generate = async function() {
     this.superheroes.forEach((superhero) => {
         this.elements += `
         <a href="${superhero.urls[0].url}">
-            <article>
-            <h3>${superhero.name}</h3>
-                    <img class="superhero-img" src = "${superhero.thumbnail.path}.jpg" alt = "${superhero.name}"></img>
-                    </article>
+        <article>
+        <h3>${superhero.name}</h3>
+        <img class="superhero-img" src = "${superhero.thumbnail.path}.jpg" alt = "${superhero.name}"></img>
+        </article>
         </a>
         ` 
     });
