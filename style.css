@@ -316,6 +316,21 @@ html {
     z-index: -1;
     
   }
+
+  .spiderman {
+    position: fixed;
+    top: 0;
+    height: 50%;
+    right: 20%;
+    animation: spiderman 8s infinite;
+  }
+
+  @keyframes spiderman{
+    0% {top: -300px;} 
+    20%{top:60px;} 
+    30%{top: -300px;}
+    100%{top: -300px;}
+}
   
   /* ---- section ---- */
   
