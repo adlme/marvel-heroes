@@ -319,10 +319,11 @@ html {
 
   .spiderman {
     position: fixed;
-    top: 0;
+    top: -300px;
     height: 50%;
     right: 20%;
     animation: spiderman 8s infinite;
+    animation-delay: 4s;
   }
 
   @keyframes spiderman{
