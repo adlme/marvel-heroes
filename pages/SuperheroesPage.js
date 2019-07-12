@@ -27,7 +27,7 @@ SuperheroesPage.prototype.generate = async function() {
         ` 
     });
     this.elements += `</section>
-    <img class= "spiderman" src = "./spiderman.png"></img>
+    <img class= "spiderman" src = "./spiderman1.png"></img>
     
     `
     this.render();
