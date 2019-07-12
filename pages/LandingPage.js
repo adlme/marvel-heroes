@@ -11,8 +11,8 @@ LandingPage.prototype.generate = function() {
         <div id = "LP">
             <h1 class="glow">Find your favorite Superhero</h1>
             <button class="button-landing-page" url="/superheroes">Find Superhero</button>
-            <video class = "bg-video" poster="./Captura de pantalla 2019-07-11 a las 10.13.40.png" autoplay muted loop>
-              <source src="./Invasión Secreta-Historia-completa.mp4" type="video/mp4">
+            <video class = "bg-video" poster="./Captura" autoplay muted loop>
+              <source src="./Invasion.mp4" type="video/mp4">
             </video>
         </div>
     </header>
