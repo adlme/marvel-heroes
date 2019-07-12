@@ -22,6 +22,10 @@ Router.prototype.buildDom = function(url, parentElement) {
 Router.prototype.generateLandingPage = function(parentElement) {
     this.page = new LandingPage(parentElement);
     this.page.generate();
+    // var superheroButton = document.querySelector(".button-landing-page");
+    // superheroButton.addEventListener('click', (parentElement)=>{
+    //     this.buildDom("/superheroes",parentElement)
+    // })
 }
 
 Router.prototype.generateSuperheroesPage = function(parentElement) {

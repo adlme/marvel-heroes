@@ -22,7 +22,7 @@ function main() {
     generateFooter();
     addListenersToNavbar();
     activateRouter();
-    
+
     function generateLayout() {
         layoutInstance = new Layout(rootElement);
         layoutInstance.generate();

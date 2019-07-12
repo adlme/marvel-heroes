@@ -33,5 +33,10 @@ LandingPage.prototype.addListenerToButton = function() {
 }
 
 LandingPage.prototype.changePage = function() {
-  routerInstance.buildDom('/superheroes', this.parentElement)
+  var main = document.querySelector("#site-main");
+  routerInstance.buildDom('/superheroes', main);
+  var navSuperheroes = document.querySelector('#Superheroes');
+  var navHome = document.querySelector('#Home');
+  navHome.classList.remove('active');
+  navSuperheroes.classList.add('active');
 }

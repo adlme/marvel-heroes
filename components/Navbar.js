@@ -17,7 +17,7 @@ Navbar.prototype.generate = function(){
     this.links.forEach((link) => {
         this.elements += `
             <li>
-                <a class = "${link.active}"href = "#0" url = ${link.url}>${link.name}</a>
+                <a id="${link.name}" class = "${link.active}"href = "#0" url = ${link.url}>${link.name}</a>
             </li>
         `
     });
