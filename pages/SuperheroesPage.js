@@ -18,7 +18,7 @@ SuperheroesPage.prototype.generate = async function() {
     `;
     this.superheroes.forEach((superhero) => {
         this.elements += `
-        <a href="${superhero.urls[0].url}">
+        <a href="${superhero.urls[1].url}">
         <article>
         <h3>${superhero.name}</h3>
         <img class="superhero-img" src = "${superhero.thumbnail.path}.jpg" alt = "${superhero.name}"></img>
