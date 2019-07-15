@@ -1,12 +1,12 @@
 'use strict';
 
-function main() {
-    var ENTRY_POINT = '/';
-    var layoutInstance = null;
-    var navbarInstance = null;
-    var footerInstance = null;
-    var anchors = null;
-    var links = [{
+const main = () => {
+    const ENTRY_POINT = '/';
+    let layoutInstance = null;
+    let navbarInstance = null;
+    let footerInstance = null;
+    let anchors = null;
+    const links = [{
         name: "Home",
         url: "/",
         active: "active"
@@ -15,48 +15,42 @@ function main() {
         url: "/superheroes",
         active:""
     }];
-    var rootElement = document.querySelector("#root");
+    const rootElement = document.querySelector("#root");
     
-    generateLayout();
-    generateNavbar();
-    generateFooter();
-    addListenersToNavbar();
-    activateRouter();
-
-    function generateLayout() {
+    const generateLayout = () => {
         layoutInstance = new Layout(rootElement);
         layoutInstance.generate();
     };
-    
-    function generateNavbar() {
+    const generateNavbar = () => {
         navbarInstance = new Navbar(layoutInstance.header, links);
         navbarInstance.generate();
     }
-
-    function generateFooter() {
+    const generateFooter = () => {
         footerInstance = new Footer(layoutInstance.footer, links);
         footerInstance.generate();
     }
-
-    function activateRouter() {
+    const activateRouter = () => {
         routerInstance.buildDom(ENTRY_POINT, layoutInstance.main)
     }
-
-    function addListenersToNavbar() {
+    const addListenersToNavbar = () => {
         anchors = document.querySelectorAll("nav a");
         anchors.forEach((anchor) => {
             anchor.addEventListener('click', changePage)
         })
     }
-
-    function changePage(event) {
-        var url = event.target.attributes.url.value;
+    const changePage = (event) => {
+        const url = event.target.attributes.url.value;
         routerInstance.buildDom(url, layoutInstance.main)
-        anchors.forEach(function(anchor) {
+        anchors.forEach((anchor) => {
             anchor.classList.remove('active');
         })
         event.target.classList.add('active');
     }
+    generateLayout();
+    generateNavbar();
+    generateFooter();
+    addListenersToNavbar();
+    activateRouter();
 }
 
 window.addEventListener('load', main);
